@@ -1,213 +1,266 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beit Jede Car Care — São Paulo</title>
+    <title>Beit Jede — Luxury Mobile Car Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #080808;
-            --card-bg: #121212;
+            --bg-deep: #070708;
+            --bg-card: #101014;
             --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --text-main: #f5f5f5;
-            --text-muted: #aaaaaa;
+            --gold-glow: rgba(212, 175, 55, 0.15);
             --border-gold: rgba(212, 175, 55, 0.3);
+            --text-light: #f5f5f7;
+            --text-dim: #9a9a9a;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            padding-bottom: 50px;
+            overflow-x: hidden;
         }
 
+        /* Header / Navbar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            border-bottom: 1px solid var(--border-gold);
-            background: rgba(8, 8, 8, 0.95);
+            padding: 22px 6%;
+            background: rgba(7, 7, 8, 0.9);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-gold);
         }
 
-        .logo {
-            font-size: 1.2rem;
+        .brand-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--gold);
-            text-transform: uppercase;
         }
 
-        .btn-book {
-            background: transparent;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 8px 18px;
+        .brand-arabic {
+            font-family: 'Amiri', serif;
             font-size: 0.85rem;
+            color: var(--text-dim);
             letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            margin-top: -2px;
         }
 
-        .btn-book:hover {
-            background: var(--gold);
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37, #aa820a);
             color: #000;
+            padding: 10px 22px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px var(--gold-glow);
         }
 
+        .btn-gold:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
         .hero {
-            padding: 40px 5% 20px;
             text-align: center;
+            padding: 60px 5% 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            font-family: 'Amiri', serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 5px;
         }
 
         .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            color: var(--text-main);
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 4px;
             text-transform: uppercase;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.2;
         }
 
         .hero p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
         }
 
-        .image-container {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto 40px;
-            border-radius: 8px;
+        /* Image Showcase */
+        .main-image-frame {
+            max-width: 1100px;
+            margin: 0 auto 60px;
+            padding: 0 5%;
+        }
+
+        .image-wrapper {
+            position: relative;
+            border-radius: 4px;
             overflow: hidden;
             border: 1px solid var(--border-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
         }
 
-        .image-container img {
+        .image-wrapper img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        .section-title {
+        /* Services Section */
+        .section-header {
             text-align: center;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
             color: var(--gold);
-            margin: 50px 0 20px;
+            font-size: 1.6rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 0 5%;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             max-width: 1100px;
-            margin: 0 auto;
+            margin: 0 auto 70px;
+            padding: 0 5%;
         }
 
         .service-card {
-            background: var(--card-bg);
+            background: var(--bg-card);
             border: 1px solid var(--border-gold);
-            border-radius: 6px;
-            padding: 25px;
-            transition: transform 0.3s ease;
+            padding: 30px;
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
             border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--gold-glow);
         }
 
         .service-card h3 {
+            font-family: 'Cinzel', serif;
             color: var(--gold);
             font-size: 1.1rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            margin-bottom: 12px;
+            letter-spacing: 1.5px;
         }
 
         .service-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            color: var(--text-dim);
+            font-size: 0.88rem;
+            margin-bottom: 20px;
         }
 
-        .service-price {
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
+        /* Footer */
         footer {
+            border-top: 1px solid var(--border-gold);
             text-align: center;
             padding: 40px 5%;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-gold);
-            margin-top: 60px;
+            background: #040405;
+        }
+
+        .footer-arabic {
+            font-family: 'Amiri', serif;
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-copy {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Beit Jede Car Care</div>
-        <a href="https://wa.me/5511999999999" class="btn-book">Book Now</a>
+        <div class="brand-box">
+            <span class="brand-title">BEIT JEDE</span>
+            <span class="brand-arabic">بيت جدي — São Paulo</span>
+        </div>
+        <a href="https://wa.me/5511999999999" class="btn-gold">Book Experience</a>
     </header>
 
     <section class="hero">
-        <h1>Precision, <span>Where You Park.</span></h1>
-        <p>Premium mobile car care, delivered directly to your home, condominium, office or private parking space in São Paulo.</p>
+        <div class="hero-tag">الفخامة والإتقان في مكانك</div>
+        <h1>PRECISION DETAILING.<br>DELIVERED WHERE YOU PARK.</h1>
+        <p>Mobile luxury car care with uncompromising standards, bringing traditional Arabic hospitality and attention to detail directly to your vehicle.</p>
     </section>
 
-    <div class="image-container">
-        <img src="beit-jede-luxury.png" alt="Beit Jede Luxury Mobile Car Care Setup">
+    <div class="main-image-frame">
+        <div class="image-wrapper">
+            <img src="beit-jede-luxury.png" alt="Beit Jede Luxury Car Care Setup">
+        </div>
     </div>
 
-    <h2 class="section-title">Our Services</h2>
+    <div class="section-header">
+        <h2>Our Tailored Services</h2>
+    </div>
 
     <div class="services-grid">
         <div class="service-card">
-            <h3>01 — Everyday Care</h3>
-            <p>Exterior maintenance, glass, wheels, and a precise interior refresh for the cars you use every day.</p>
-            <div class="service-price">Starting from R$ XX</div>
+            <h3>01 — The Signature Detail</h3>
+            <p>Complete interior and exterior revival using Swiss-grade products, dedicated to daily luxury vehicles.</p>
         </div>
         <div class="service-card">
-            <h3>02 — Executive Detail</h3>
-            <p>Comprehensive multi-step paint correction, ceramic protection, and deep luxury interior conditioning.</p>
-            <div class="service-price">Starting from R$ XX</div>
+            <h3>02 — Ceramic Protection</h3>
+            <p>Multi-stage paint correction and long-lasting ceramic coating for ultimate hydrophobic depth and gloss.</p>
         </div>
         <div class="service-card">
-            <h3>03 — Fleet & Condominium</h3>
-            <p>Tailored recurring maintenance programs for residential buildings and corporate vehicle fleets.</p>
-            <div class="service-price">Custom Quote</div>
+            <h3>03 — Executive Fleet Care</h3>
+            <p>Bespoke maintenance programs for private residences, luxury condominiums, and high-end corporate fleets.</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Beit Jede Car Care — São Paulo, Brazil. All rights reserved.</p>
+        <div class="footer-arabic">بيت جدي للعناية الفائقة بالسيارات</div>
+        <div class="footer-copy">&copy; 2026 Beit Jede Car Care — All Rights Reserved.</div>
     </footer>
 
 </body>
